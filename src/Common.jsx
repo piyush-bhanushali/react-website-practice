@@ -1,27 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Common from "./Common";
 import web from "./images/new pic.png";
 
-const Home = () => {
+const Common = (props) => {
   return (
     <>
-      {/* <section id="header" className="d-flex align-items-center">
-        <div className="container-fluid nav_bg">
+      <section id="header" className="d-flex align-items-center">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-10 mx-auto">
               <div className="row">
                 <div className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
                   <h1>
-                    Grow your business with
+                    {props.name}
                     <strong className="brand-name">PiyushBhanushali</strong>
                   </h1>
                   <h2 className="my-3">
                     We are the team of talented developer making websites
                   </h2>
                   <div className="mt-3">
-                    <NavLink to="/service" className="btn-get-started">
-                      Get Started
+                    <NavLink to={props.visit} className="btn-get-started">
+                      {props.btname}
                     </NavLink>
                   </div>
                 </div>
@@ -30,24 +29,18 @@ const Home = () => {
                   className="col-lg-6 order-1 order-lg-2 header-img"
                 >
                   <img
-                    src={web}
+                    src={props.imgsrc}
                     className="img-fluid animated"
-                    alt="home img"
+                    alt="Alt img"
                   />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
-      <Common
-        name="Grow your business with"
-        imgsrc={web}
-        visit="/service"
-        btname="Get Started"
-      />
+      </section>
     </>
   );
 };
 
-export default Home;
+export default Common;
